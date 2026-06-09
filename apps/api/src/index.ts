@@ -1,9 +1,11 @@
 import "dotenv/config";
 import express from "express";
 import { Pool } from "pg";
+import cors from "cors";
 import type { Task } from "@todo-app/shared";
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 const connectionString = process.env.DATABASE_URL;
@@ -34,7 +36,7 @@ app.get("/tasks", async (_req, res) => {
       )
     ).rows;
     const tasks: Task[] = result.map(
-      (task: DBTask): Task => ({
+      (task): Task => ({
         id: task.id,
         title: task.title,
         completed: task.completed,
