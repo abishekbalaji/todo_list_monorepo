@@ -4,7 +4,17 @@
   "description": "To do list app",
   "packageManager": "pnpm@11.5.2",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm -r --parallel dev",
+    "dev:api": "pnpm --filter @todo-app/api dev",
+    "dev:web": "pnpm --filter @todo-app/web dev",
+    "build": "pnpm -r build",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @todo-app/api exec prisma migrate dev",
+    "db:generate": "pnpm --filter @todo-app/api exec prisma generate",
+    "db:studio": "pnpm --filter @todo-app/api exec prisma studio",
+    "db:seed": "pnpm --filter @todo-app/api exec prisma db seed",
+    "db:reset": "pnpm --filter @todo-app/api exec prisma migrate reset"
   },
   "keywords": [],
   "author": "Abishek B",
