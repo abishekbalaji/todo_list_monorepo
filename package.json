@@ -1,0 +1,14 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "To do list app",
+  "packageManager": "pnpm@11.5.2",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Abishek B",
+  "license": "ISC",
+  "type": "module",
+  "private": true
+}
